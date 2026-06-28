@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Nawall ❤️</title>
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ffb6c1,#ffdbe8);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow-x:hidden;
+}
+.container{
+max-width:800px;
+width:90%;
+text-align:center;
+padding:20px;
+}
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-bottom:20px;
+}
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+}
+h1{color:#ff4f81}
+#typing{white-space:pre-line;line-height:1.7}
+.note{
+margin-top:20px;
+font-size:14px;
+background:#fff3f7;
+padding:10px;
+border-radius:10px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="card">
+<h1>Untuk Nawall ❤️</h1>
+
+<div class="gallery">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+</div>
+
+<p id="typing"></p>
+
+<div class="note">
+<b>Cara ganti foto:</b><br>
+Upload foto kamu dengan nama:<br>
+foto1.jpg, foto2.jpg, foto3.jpg, foto4.jpg<br><br>
+
+<b>Cara ganti ucapan:</b><br>
+Edit variabel <code>pesan</code> di bagian bawah file ini.
+</div>
+
+</div>
+</div>
+
+<audio id="musik" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const pesan = `Hai Nawall ❤️
+
+Maaf ya kalau aku kadang suka telat ngabarin atau ketiduran.
+
+Terima kasih karena sudah hadir dan menjadi bagian dari hari-hariku.
+
+Semoga semua yang sedang kamu perjuangkan dimudahkan,
+dan semoga senyum manismu selalu terjaga.
+
+Jangan lupa jaga kesehatan dan jangan terlalu capek ya.
+
+- Bintang Sandy Aji 🤍`;
+
+let i=0;
+
+function ketik(){
+ if(i < pesan.length){
+   document.getElementById("typing").innerHTML += pesan.charAt(i);
+   i++;
+   setTimeout(ketik,35);
+ }
+}
+
+ketik();
+
+document.addEventListener('click', function () {
+    document.getElementById('musik').play();
+}, { once: true });
+</script>
+
+</body>
+</html>
