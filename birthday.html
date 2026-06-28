@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ratnaa ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ffd6e8,#fff5fa);
+overflow-x:hidden;
+}
+.wrap{
+max-width:1000px;
+margin:40px auto;
+padding:20px;
+}
+.card{
+background:#fff;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+padding:30px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+h1{
+text-align:center;
+color:#ff4f81;
+font-size:46px;
+line-height:1.4;
+margin-bottom:30px;
+}
+.gallery{
+width:100%;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-bottom:30px;
+}
+.gallery img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:18px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.3s;
+}
+.gallery img:hover{transform:scale(1.03)}
+#typing{
+max-width:760px;
+font-size:18px;
+line-height:2;
+white-space:pre-line;
+text-align:justify;
+color:#444;
+}
+.heart{
+position:fixed;
+top:-30px;
+animation:fall linear forwards;
+z-index:999;
+}
+@keyframes fall{
+to{transform:translateY(110vh);opacity:0;}
+}
+@media(max-width:768px){
+h1{font-size:34px}
+.gallery{grid-template-columns:1fr}
+.gallery img{height:220px}
+#typing{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<div class="card">
+
+<h1>🎂<br>Happy Birthday<br>Ratnaa ❤️</h1>
+
+<div class="gallery">
+<img src="foto1.jpg" alt="">
+<img src="foto2.jpg" alt="">
+<img src="foto3.jpg" alt="">
+<img src="foto4.jpg" alt="">
+</div>
+
+<p id="typing"></p>
+
+</div>
+</div>
+
+<audio id="musik" loop>
+<source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const pesan=`🎂 Happy Birthday Ratnaa ❤️
+
+Selamat ulang tahun ya Ratnaa!
+
+Semoga selalu sehat, bahagia, panjang umur, dan semua cita-citamu tercapai.
+
+Semangat terus menjalani kelas 12.
+Aku tahu perjalananmu tidak mudah.
+Ada tugas, ujian, dan rasa lelah.
+
+Tapi aku yakin kamu bisa melewati semuanya.
+
+Jangan pernah menyerah.
+Tetap percaya pada dirimu sendiri.
+
+Semoga hasil ujianmu memuaskan dan semua impianmu menjadi kenyataan.
+
+Terima kasih sudah menjadi pribadi yang baik.
+
+Enjoy your special day!
+
+— Bintang Sandy Aji 🤍`;
+
+let i=0;
+function ketik(){
+ if(i<pesan.length){
+  document.getElementById("typing").innerHTML+=pesan.charAt(i++);
+  setTimeout(ketik,30);
+ }
+}
+ketik();
+
+const musik=document.getElementById("musik");
+if(localStorage.getItem("playMusic")){
+ musik.play().catch(()=>{});
+}
+
+setInterval(()=>{
+ const h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="❤️";
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(20+Math.random()*20)+"px";
+ h.style.animationDuration=(4+Math.random()*3)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),7000);
+},350);
+</script>
+
+</body>
+</html>
