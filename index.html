@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Ratnaa</title>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(135deg,#ff7eb3,#ffc2d1);display:flex;justify-content:center;align-items:center;height:100vh;color:#fff}
+.card{background:rgba(255,255,255,.15);padding:40px;border-radius:20px;text-align:center;backdrop-filter:blur(8px)}
+button{padding:15px 30px;border:none;border-radius:30px;background:#fff;color:#ff4f81;font-size:18px;cursor:pointer}
+</style></head><body>
+<div class="card">
+<h1>🎉 Happy Birthday Ratnaa ❤️</h1>
+<p>Aku punya hadiah kecil buat kamu...</p>
+<button onclick="go()">🎁 Open Your Gift</button>
+</div>
+<script>
+function go(){
+ localStorage.setItem('playMusic','yes');
+ location.href='birthday.html';
+}
+</script>
+</body></html>
